@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stopwatch</title>
+
+    <style type="text/css">
+
+      h1 {
+        font-size: 4.5em;
+      }
+
+      button {
+        font-size: 30px;
+        width: 140px;
+        height: 60px;
+        border-radius: 50px;
+      }
+
+      #startPause {
+        background-color: green;
+        border-color: green;
+      }
+
+      #reset {
+        background-color: gray;
+        border-color: gray;
+      }
+
+      .container {
+        margin: auto;
+        margin-top: 200px;
+        width: 400px;
+        height: 400px;
+      }
+
+      #controls {
+        margin-left: 7px;
+        width: 310px;
+        height: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="script.js"></script>
+    <div class="container">
+      <h1><p id="output"><b>0:00:00:00</b></p></h1>
+      <div id="controls">
+        <button id="startPause" onclick="startPause()"><b id="start">Start</b></button>
+        <button id="reset" onclick="reset()"><b id="reset">Reset</b></button>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Trig Questions</title>
+</head>
+
+<body>
+  <p id="message">Question: <text id="question-text"></text></p>
+  <div id="question-div">
+    <input type="text" id="input" /><button onclick="checkAnswer()">Check Answer</button>
+  </div>
+  <p id="answer"></p>
+  <p id="next-button"></p>
+
+  <script>
+    var questions_array = ["Sin 0", "Sin 1/2", "Sin √2/2"];
+    var answers_array = ["0", "π/6", "π/4"];
+    var ranNum = Math.floor(Math.random() * (questions_array.length - 0));
+
+    function checkAnswer() {
+      var receivedAnswer = input.value;
+      if (receivedAnswer == questions_array[ranNum]) {
+        document.getElementById("answer").innerHTML = "Correct!";
+        document.getElementById("next-button").innerHTML = "<button onclick=nextButton()>Next Question</button>";
+        document.getElementById("question-div").innerHTML = "";
+      } else {
+        document.getElementById("answer").innerHTML = "Incorrect!";
+        document.getElementById("next-button").innerHTML = "<button onclick=nextButton()>Next Question</button>";
+        document.getElementById("question-div").innerHTML = "";
+
+      }
+    }
+
+    document.getElementById("question-text").innerHTML = questions_array[ranNum];
+    function nextButton() {
+      ranNum = Math.floor(Math.random() * (questions.length - 0));
+      document.getElementById("question-text").innerHTML = questions_array[ranNum];
+      document.getElementById("next-button").innerHTML = "";
+      document.getElementById("question-div").innerHTML = "<input type='text' id='input'/><button onclick='checkAnswer()'>Check Answer</button>";
+      document.getElementById("answer").innerHTML = "";
+    }
+  </script>
+
+</body>
+
+</html>
